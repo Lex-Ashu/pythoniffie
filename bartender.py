@@ -1,15 +1,18 @@
-# A little python program in light of Hacktoberfest 2019 :)
-
 legal_age = 21
 
-print("-- Welcome to the Hacktoberfest bar --")
+print("-- Welcome to the Hacktoberfest bar! --")
 
-age = int(input("How old are you? "))
-
-if age >= legal_age:
-    print("Have a beer!")
-elif age == 20:
-    print("So close..one more year kid.")
-else:
-    print(f"Sorry, {age} is too young for a beer, how about a soda?")
+try:
+    age = int(input("How old are you? "))
     
+    if age >= legal_age:
+        print("Enjoy your beer!")
+    elif age == 20:
+        print("So close... just one more year!")
+    elif age > 0:
+        print(f"Sorry, {age} is too young for a beer. How about a soda?")
+    else:
+        print("Age can't be negative. Please enter a valid age.")
+        
+except ValueError:
+    print("Invalid input! Please enter a valid number for age.")
